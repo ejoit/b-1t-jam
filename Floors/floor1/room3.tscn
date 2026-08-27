@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://c0hesyxl0lpp2"]
+
+[ext_resource type="Script" uid="uid://c1lutuboralqt" path="res://SCRIPT/levelcode.gd" id="1_3fqgn"]
+[ext_resource type="PackedScene" uid="uid://b501sa4vw50xt" path="res://SCENE/game_ui.tscn" id="2_vv8sc"]
+[ext_resource type="TileSet" uid="uid://cccej0kcor47l" path="res://TILESET/walls.tres" id="3_4igoa"]
+[ext_resource type="PackedScene" uid="uid://bjht5rivs3yom" path="res://collectables/ITEMS/coffee.tscn" id="9_avk34"]
+[ext_resource type="PackedScene" uid="uid://doxdvhvxt230l" path="res://SCENE/player.tscn" id="10_o7fd2"]
+[ext_resource type="PackedScene" uid="uid://cix13w8uwlygf" path="res://SCENE/co_worker.tscn" id="11_eydpe"]
+[ext_resource type="Script" uid="uid://i0cew8l18w34" path="res://RESOURCES/Action.gd" id="12_tmjvi"]
+[ext_resource type="PackedScene" uid="uid://kyvvd1eddjxv" path="res://SCENE/door.tscn" id="13_m5tsx"]
+[ext_resource type="PackedScene" uid="uid://mur8yeupqlnx" path="res://SCENE/door2.tscn" id="16_ljtwb"]
+
+[sub_resource type="Resource" id="Resource_avk34"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 75.0
+direction = Vector2(-1, 0)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_2pflx"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 75.0
+direction = Vector2(1, 0)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_soen3"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 75.0
+direction = Vector2(1, 0)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_kq6aa"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 75.0
+direction = Vector2(-1, 0)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[node name="main" type="Node2D" unique_id=1039175071]
+script = ExtResource("1_3fqgn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=910440997]
+
+[node name="Game_UI" parent="CanvasLayer" unique_id=855096280 instance=ExtResource("2_vv8sc")]
+anchors_preset = -1
+anchor_left = -0.012
+anchor_top = -0.046000004
+offset_left = 0.82400036
+offset_top = 46.808002
+offset_right = -13.0
+offset_bottom = 17.0
+
+[node name="TileMap" type="TileMap" parent="." unique_id=288299975]
+position = Vector2(1, 1)
+tile_set = ExtResource("3_4igoa")
+format = 2
+layer_0/tile_data = PackedInt32Array(262140, 131072, 1, 720892, 131072, 5, 655356, 0, 4, 262142, 131072, 1, 655358, 131072, 1, 262143, 196608, 1, 655359, 131072, 1, 589824, 131072, 1, 589825, 131072, 1, 589826, 131072, 1, 589827, 131072, 5, 131069, 0, 1, 196605, 65536, 2, 262141, 65536, 1, 327677, 65536, 2, 393213, 65536, 2, 458749, 0, 2, 655357, 131072, 1, 262139, 131072, 1, 720891, 131072, 1, 262138, 0, 4, 327674, 65536, 2, 393210, 65536, 2, 458746, 65536, 2, 524282, 65536, 2, 589818, 65536, 2, 655354, 65536, 2, 720890, 0, 5, 524291, 65536, 2, 458755, 65536, 2, 393219, 65536, 2, 327683, 65536, 2, 196611, 65536, 2, 262147, 65536, 2, 131075, 65536, 2, 131070, 196608, 1, -131069, 65536, 2, -65533, 65536, 2, 3, 65536, 2, 65539, 65536, 2, -65539, 65536, 2, -3, 65536, 2, 65533, 65536, 2, -196605, 131072, 4, -131075, 0, 4, -196606, 131072, 1, -196607, 131072, 1, -196608, 131072, 1, -131073, 131072, 1, -131074, 131072, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138298640]
+visible = false
+offset_left = 86.0
+offset_top = 44.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="PLAYER" parent="." unique_id=1477563370 instance=ExtResource("10_o7fd2")]
+position = Vector2(-72, 132)
+
+[node name="Goal" parent="." unique_id=358862055 instance=ExtResource("13_m5tsx")]
+position = Vector2(11, -36)
+next_level = "res://Floors/floor1/room4.tscn"
+doortag = "2"
+keyneed = "keyf1-2"
+
+[node name="doors" type="Node2D" parent="." unique_id=619147755]
+position = Vector2(-73, 169)
+rotation = -3.1415925
+
+[node name="door" parent="doors" unique_id=160481911 instance=ExtResource("16_ljtwb")]
+next_level = "res://Floors/floor1/room1.tscn"
+doortag = "1"
+keyneed = "keyf1-2"
+
+[node name="Spawn" parent="doors/door" index="2" unique_id=1096225453]
+position = Vector2(2.2649765e-06, 22)
+
+[node name="door" parent="doors/door" unique_id=842621827 instance=ExtResource("13_m5tsx")]
+position = Vector2(-7.999983, 109)
+rotation = -3.1415927
+next_level = "res://Floors/floor1/room3B.tscn"
+doortag = "DOORA"
+keyneed = "keyf1-4"
+
+[node name="CoWorkers" type="Node2D" parent="." unique_id=2047194704]
+
+[node name="co-worker" parent="CoWorkers" unique_id=474091753 instance=ExtResource("11_eydpe")]
+position = Vector2(47, 37)
+intructions = Array[ExtResource("12_tmjvi")]([SubResource("Resource_avk34"), SubResource("Resource_2pflx")])
+
+[node name="co-worker2" parent="CoWorkers" unique_id=608887341 instance=ExtResource("11_eydpe")]
+position = Vector2(-31, 71)
+max_instructions = 1
+intructions = Array[ExtResource("12_tmjvi")]([SubResource("Resource_soen3"), SubResource("Resource_kq6aa")])
+
+[node name="co-worker3" parent="CoWorkers" unique_id=996763399 instance=ExtResource("11_eydpe")]
+position = Vector2(-26, 9)
+max_instructions = 1
+intructions = Array[ExtResource("12_tmjvi")]([SubResource("Resource_soen3"), SubResource("Resource_kq6aa")])
+
+[node name="COFFEE" parent="." unique_id=1348534410 instance=ExtResource("9_avk34")]
+position = Vector2(-70, 90)
+
+[connection signal="inchat" from="PLAYER" to="." method="_on_player_inchat"]
+
+[editable path="doors/door"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://xxymr0rbhilp"]
+
+[ext_resource type="Script" uid="uid://b81btver7x8d3" path="res://SCRIPT/vision.gd" id="1_utmin"]
+
+[node name="vision" type="Node2D" unique_id=810539229]
+script = ExtResource("1_utmin")

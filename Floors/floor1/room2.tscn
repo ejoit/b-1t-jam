@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://dcp3ukqegmbjv"]
+
+[ext_resource type="Script" uid="uid://c1lutuboralqt" path="res://SCRIPT/levelcode.gd" id="1_3fqgn"]
+[ext_resource type="PackedScene" uid="uid://b501sa4vw50xt" path="res://SCENE/game_ui.tscn" id="2_vv8sc"]
+[ext_resource type="TileSet" uid="uid://cccej0kcor47l" path="res://TILESET/walls.tres" id="3_4igoa"]
+[ext_resource type="PackedScene" uid="uid://b22hrs85hmxl6" path="res://MapItems/locker.tscn" id="4_3fqgn"]
+[ext_resource type="PackedScene" uid="uid://bshd3wk8j730n" path="res://MapItems/table1.tscn" id="5_vv8sc"]
+[ext_resource type="PackedScene" uid="uid://bajajxiyw6jnd" path="res://MapItems/computer.tscn" id="6_4igoa"]
+[ext_resource type="PackedScene" uid="uid://b65giq5k0v05k" path="res://MapItems/table_2.tscn" id="7_xnnh6"]
+[ext_resource type="PackedScene" uid="uid://bsefcu0c0ll61" path="res://MapItems/lamp.tscn" id="8_oo1bx"]
+[ext_resource type="PackedScene" uid="uid://bjht5rivs3yom" path="res://collectables/ITEMS/coffee.tscn" id="9_avk34"]
+[ext_resource type="PackedScene" uid="uid://doxdvhvxt230l" path="res://SCENE/player.tscn" id="10_o7fd2"]
+[ext_resource type="PackedScene" uid="uid://cix13w8uwlygf" path="res://SCENE/co_worker.tscn" id="11_eydpe"]
+[ext_resource type="Resource" uid="uid://bvmxtrosax3qo" path="res://inventory/items/keys/keyF1-2.tres" id="12_av4rp"]
+[ext_resource type="Script" uid="uid://i0cew8l18w34" path="res://RESOURCES/Action.gd" id="12_tmjvi"]
+[ext_resource type="PackedScene" uid="uid://kyvvd1eddjxv" path="res://SCENE/door.tscn" id="13_m5tsx"]
+[ext_resource type="PackedScene" uid="uid://dh68t70kkjgf3" path="res://MapItems/CHEST.tscn" id="15_3fqgn"]
+[ext_resource type="PackedScene" uid="uid://mur8yeupqlnx" path="res://SCENE/door2.tscn" id="16_ljtwb"]
+
+[sub_resource type="Resource" id="Resource_4kmf3"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 30.0
+direction = Vector2(1, 0)
+speed = 60
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_06jon"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 30.0
+direction = Vector2(-1, 0)
+speed = 60
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_soen3"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 100.0
+direction = Vector2(0, -1)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_dtef7"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 100.0
+direction = Vector2(0, 1)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_nun1t"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 80.0
+direction = Vector2(1, 0)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_87anm"]
+script = ExtResource("12_tmjvi")
+action = "stay"
+StayStill = 1
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[sub_resource type="Resource" id="Resource_et6yg"]
+script = ExtResource("12_tmjvi")
+action = "move"
+distance = 80.0
+direction = Vector2(-1, 0)
+speed = 70
+metadata/_custom_type_script = "uid://i0cew8l18w34"
+
+[node name="main" type="Node2D" unique_id=1039175071]
+script = ExtResource("1_3fqgn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=910440997]
+
+[node name="Game_UI" parent="CanvasLayer" unique_id=855096280 instance=ExtResource("2_vv8sc")]
+anchors_preset = -1
+anchor_left = -0.012
+anchor_top = -0.046000004
+offset_left = 0.82400036
+offset_top = 46.808002
+offset_right = -13.0
+offset_bottom = 17.0
+
+[node name="TileMap" type="TileMap" parent="." unique_id=288299975]
+position = Vector2(1, 1)
+tile_set = ExtResource("3_4igoa")
+format = 2
+layer_0/tile_data = PackedInt32Array(131077, 0, 0, 196613, 65536, 4, 458754, 131072, 1, 393216, 0, 0, 262144, 0, 2, 196608, 65536, 1, 196609, 196608, 1, 196611, 0, 3, 196612, 131072, 1, 458755, 131072, 1, 458756, 131072, 1, 458757, 131072, 1, 458758, 131072, 1, 196614, 131072, 1, 196615, 65536, 0, 458759, 65536, 3, 327687, 65536, 2, 262151, 65536, 2, 393223, 65536, 2, -131068, 131072, 1, -131069, 131072, 1, -131070, 131072, 1, -131071, 131072, 1, -131072, 0, 4, -65536, 65536, 2, 0, 65536, 2, 65536, 65536, 2, 131072, 65536, 2, 458752, 65536, 1, 458753, 131072, 1, -65531, 0, 2, -131066, 131072, 1, -131063, 0, 3, 196616, 196608, 1, 196618, 0, 3, 11, 65536, 2, 65547, 65536, 2, 131083, 65536, 2, -65525, 65536, 2, -131061, 65536, 3, -131062, 131072, 1, -131065, 196608, 1, -131067, 65536, 1, -196603, 65536, 2, -262139, 65536, 2, -327675, 65536, 2, -196597, 65536, 2, -262133, 65536, 2, -327669, 65536, 2, -393211, 0, 4, -393205, 131072, 4, -393210, 131072, 1, -393209, 131072, 1, -393208, 131072, 1, -393207, 131072, 1, -393206, 131072, 1, 65539, 0, 2, 3, 0, 0, 196619, 65536, 3, 262155, 65536, 2, 327691, 65536, 2, 393227, 65536, 2, 458763, 65536, 2, 524299, 65536, 2, 589835, 65536, 2, 524295, 0, 2, 655367, 131072, 1, 655371, 131072, 5, 655368, 131072, 1, 655369, 131072, 1, 655370, 131072, 1, 655366, 131072, 1, 655365, 131072, 1, 655364, 131072, 1, 655363, 131072, 1, 655362, 131072, 1, 655361, 131072, 1, 655360, 131072, 1, 720895, 131072, 1, 720894, 131072, 1, 720893, 131072, 1, 720892, 65536, 4, 524288, 0, 2, 524287, 131072, 1, 524286, 131072, 1, 524284, 0, 4, 524285, 131072, 1, 589820, 65536, 2, 655356, 65536, 2, 262143, 131072, 1, 262142, 131072, 1, 262141, 131072, 1, 262140, 131072, 1, 262139, 131072, 1, 262138, 131072, 1, 262137, 131072, 1, 262136, 0, 4, 327672, 65536, 2, 393208, 65536, 2, 458744, 65536, 2, 524280, 65536, 2, 589816, 65536, 2, 655352, 65536, 2, 720888, 0, 5, 720889, 131072, 1, 720890, 131072, 1, 720891, 131072, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138298640]
+visible = false
+offset_left = 86.0
+offset_top = 44.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=918653714]
+position = Vector2(-7, 5)
+
+[node name="Locker" parent="Node2D" unique_id=2142948622 instance=ExtResource("4_3fqgn")]
+position = Vector2(123, 58)
+
+[node name="Locker2" parent="Node2D" unique_id=1816735294 instance=ExtResource("4_3fqgn")]
+position = Vector2(117, 58)
+
+[node name="Locker3" parent="Node2D" unique_id=440692094 instance=ExtResource("4_3fqgn")]
+position = Vector2(111, 58)
+
+[node name="table1" parent="Node2D" unique_id=1191496604 instance=ExtResource("5_vv8sc")]
+position = Vector2(-81, 82)
+
+[node name="computer" parent="Node2D" unique_id=1125276428 instance=ExtResource("6_4igoa")]
+position = Vector2(-81, 80)
+chat = "res://chats/Computers/comp1.dtl"
+
+[node name="table3" parent="Node2D" unique_id=463203415 instance=ExtResource("5_vv8sc")]
+position = Vector2(108, 35)
+
+[node name="computer2" parent="Node2D" unique_id=885023846 instance=ExtResource("6_4igoa")]
+position = Vector2(108, 33)
+
+[node name="table4" parent="Node2D" unique_id=839717686 instance=ExtResource("5_vv8sc")]
+position = Vector2(180, 35)
+
+[node name="computer3" parent="Node2D" unique_id=375853023 instance=ExtResource("6_4igoa")]
+position = Vector2(180, 33)
+
+[node name="table2" parent="Node2D" unique_id=2129023481 instance=ExtResource("7_xnnh6")]
+position = Vector2(71, 60)
+
+[node name="lamp" parent="Node2D" unique_id=1873959588 instance=ExtResource("8_oo1bx")]
+position = Vector2(23, 59)
+
+[node name="Locker4" parent="Node2D" unique_id=1929090812 instance=ExtResource("4_3fqgn")]
+position = Vector2(105, 58)
+
+[node name="co-worker" parent="." unique_id=474091753 instance=ExtResource("11_eydpe")]
+position = Vector2(68, 8)
+intructions = Array[ExtResource("12_tmjvi")]([SubResource("Resource_4kmf3"), SubResource("Resource_06jon")])
+
+[node name="co-worker2" parent="." unique_id=608887341 instance=ExtResource("11_eydpe")]
+position = Vector2(152, 149)
+max_instructions = 1
+intructions = Array[ExtResource("12_tmjvi")]([SubResource("Resource_soen3"), SubResource("Resource_dtef7")])
+
+[node name="co-worker3" parent="." unique_id=612806670 instance=ExtResource("11_eydpe")]
+position = Vector2(9, 155)
+intructions = Array[ExtResource("12_tmjvi")]([SubResource("Resource_nun1t"), SubResource("Resource_87anm"), SubResource("Resource_et6yg")])
+
+[node name="door" parent="." unique_id=160481911 instance=ExtResource("16_ljtwb")]
+position = Vector2(-120, 154)
+rotation = -1.5707964
+next_level = "res://Floors/floor1/room1.tscn"
+doortag = "2"
+keyneed = "keyf1-1"
+
+[node name="Spawn" parent="door" index="2" unique_id=1096225453]
+position = Vector2(2.3841858e-06, 19)
+
+[node name="door2" parent="." unique_id=358862055 instance=ExtResource("13_m5tsx")]
+position = Vector2(135, -84.000015)
+next_level = "res://Floors/floor1/room3.tscn"
+doortag = "1"
+keyneed = "keyf1-2"
+
+[node name="Spawn" parent="door2" index="0" unique_id=1391376989]
+position = Vector2(0, 17)
+
+[node name="PLAYER" parent="." unique_id=23979979 instance=ExtResource("10_o7fd2")]
+position = Vector2(-85, 121)
+
+[node name="COFFEE" parent="." unique_id=1348534410 instance=ExtResource("9_avk34")]
+position = Vector2(-77, 104)
+
+[node name="chest" parent="." unique_id=1393500555 instance=ExtResource("15_3fqgn")]
+position = Vector2(-22, 146)
+item = ExtResource("12_av4rp")
+keyinbox = "KEYF1-2"
+
+[editable path="co-worker"]
+[editable path="co-worker2"]
+[editable path="door"]
+[editable path="door2"]

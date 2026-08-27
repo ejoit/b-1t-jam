@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://cix13w8uwlygf"]
+
+[ext_resource type="Script" uid="uid://j2t2tvi6202t" path="res://SCRIPT/co_worker.gd" id="1_soen3"]
+[ext_resource type="SpriteFrames" uid="uid://df0wejvx7uspa" path="res://animations/co_worker.tres" id="2_soen3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2owo"]
+size = Vector2(6, 5)
+
+[node name="co-worker" type="CharacterBody2D" unique_id=608887341]
+process_mode = 1
+script = ExtResource("1_soen3")
+max_instructions = 2
+
+[node name="vision" type="Area2D" parent="." unique_id=704114874]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="vision" unique_id=43593735]
+process_priority = -2
+polygon = PackedVector2Array(0, 0, 60, -35, 60, -26.25, 60, -17.5, 60, -8.75, 60, 0, 60, 8.75, 60, 17.5, 60, 26.25, 60, 35, 0, 0)
+
+[node name="RayCast1" type="RayCast2D" parent="vision" unique_id=1068093502]
+target_position = Vector2(60, -35)
+collision_mask = 2
+
+[node name="RayCast2" type="RayCast2D" parent="vision" unique_id=445674271]
+target_position = Vector2(60, -26.25)
+collision_mask = 2
+
+[node name="RayCast3" type="RayCast2D" parent="vision" unique_id=1359307444]
+target_position = Vector2(60, -17.5)
+collision_mask = 2
+
+[node name="RayCast4" type="RayCast2D" parent="vision" unique_id=490019426]
+target_position = Vector2(60, -8.75)
+collision_mask = 2
+
+[node name="RayCast5" type="RayCast2D" parent="vision" unique_id=15261435]
+target_position = Vector2(60, 0)
+collision_mask = 2
+
+[node name="RayCast6" type="RayCast2D" parent="vision" unique_id=9263860]
+target_position = Vector2(60, 8.75)
+collision_mask = 2
+
+[node name="RayCast7" type="RayCast2D" parent="vision" unique_id=1403563673]
+target_position = Vector2(60, 17.5)
+collision_mask = 2
+
+[node name="RayCast8" type="RayCast2D" parent="vision" unique_id=1679905893]
+target_position = Vector2(60, 26.25)
+collision_mask = 2
+
+[node name="RayCast9" type="RayCast2D" parent="vision" unique_id=2104430442]
+target_position = Vector2(60, 35)
+collision_mask = 2
+
+[node name="Line2D" type="Line2D" parent="vision" unique_id=2119089549]
+width = 1.0
+default_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=55688557]
+sprite_frames = ExtResource("2_soen3")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=371208981]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_i2owo")
+
+[connection signal="body_entered" from="vision" to="." method="_on_vision_body_entered"]
+[connection signal="body_exited" from="vision" to="." method="_on_vision_body_exited"]

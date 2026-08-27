@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://g3l8kfmt2sbw"]
+
+[ext_resource type="AudioStream" uid="uid://cinqhxag2l7dp" path="res://MUSIC/office2.wav" id="1_ok6j6"]
+[ext_resource type="Script" uid="uid://betc1v2wu4d3b" path="res://MUSIC/theme.gd" id="2_af24s"]
+
+[node name="Theme" type="AudioStreamPlayer2D" unique_id=442291380]
+stream = ExtResource("1_ok6j6")
+autoplay = true
+script = ExtResource("2_af24s")

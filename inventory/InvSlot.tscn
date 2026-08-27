@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ctww7a5385t45"]
+
+[ext_resource type="Script" uid="uid://c2qoew2ew506u" path="res://inventory/inv_slot.gd" id="1_78fhh"]
+[ext_resource type="Texture2D" uid="uid://cfbrqiywnuij4" path="res://SPRITES/computer.png" id="2_78fhh"]
+
+[sub_resource type="Theme" id="Theme_dn3an"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1b7r"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+
+[node name="InventorySlot" type="Panel" unique_id=1654668108]
+z_index = 2
+anchors_preset = -1
+anchor_left = -0.006
+anchor_top = -0.006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.912
+offset_top = 2.888
+offset_right = -954.0
+offset_bottom = -609.0
+theme = SubResource("Theme_dn3an")
+theme_override_styles/panel = SubResource("StyleBoxFlat_r1b7r")
+script = ExtResource("1_78fhh")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1917974373]
+z_index = 3
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 38.0
+offset_bottom = 36.0
+mouse_filter = 1
+color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1633700783]
+oversampling_with_scale = 1
+z_index = 4
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = -194.0
+offset_bottom = -36.0
+pivot_offset = Vector2(16, 17)
+mouse_filter = 1
+color = Color(1, 0.827451, 0.19215687, 0.9882353)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect" unique_id=364250527]
+z_index = 5
+position = Vector2(17, 16)
+scale = Vector2(3, 3)
+texture = ExtResource("2_78fhh")
+
+[node name="ItemName" type="Label" parent="ColorRect" unique_id=1663464975]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 4.0
+offset_right = 102.0
+offset_bottom = 11.000004
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+text = "Computer"

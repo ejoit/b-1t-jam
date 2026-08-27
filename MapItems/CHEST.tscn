@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dh68t70kkjgf3"]
+
+[ext_resource type="Script" uid="uid://djyauwhkjgxd7" path="res://SCRIPT/CHEST.gd" id="1_cwgo2"]
+[ext_resource type="Texture2D" uid="uid://btk81srpvvdsw" path="res://SPRITES/1786306849152.png" id="2_3t5ws"]
+[ext_resource type="Resource" uid="uid://f4yx1atjn3yi" path="res://inventory/playerkeys.tres" id="2_tdgqs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylk5t"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2owo"]
+size = Vector2(18, 29.5)
+
+[node name="chest" type="StaticBody2D" unique_id=1125276428]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_cwgo2")
+keyinventory = ExtResource("2_tdgqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=579836103]
+texture = ExtResource("2_3t5ws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583122745]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ylk5t")
+
+[node name="ChatZone" type="Area2D" parent="." unique_id=1507481790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatZone" unique_id=1012359387]
+position = Vector2(0, 0.25)
+shape = SubResource("RectangleShape2D_i2owo")
+
+[connection signal="body_entered" from="ChatZone" to="." method="_on_chat_zone_body_entered"]
+[connection signal="body_exited" from="ChatZone" to="." method="_on_chat_zone_body_exited"]

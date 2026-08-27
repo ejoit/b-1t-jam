@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bsefcu0c0ll61"]
+
+[ext_resource type="Texture2D" uid="uid://coq8xc4aaevlk" path="res://SPRITES/lamp.png" id="1_5dmhq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylk5t"]
+size = Vector2(8, 14)
+
+[node name="lamp" type="StaticBody2D" unique_id=1873959588]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=675423249]
+texture = ExtResource("1_5dmhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2114827474]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_ylk5t")

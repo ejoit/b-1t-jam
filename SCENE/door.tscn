@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://kyvvd1eddjxv"]
+
+[ext_resource type="Script" uid="uid://ntt3j3oubf31" path="res://SCRIPT/goal.gd" id="1_v0irt"]
+[ext_resource type="Texture2D" uid="uid://c5wcn50qw6tsh" path="res://SPRITES/doors/door.png" id="2_v0irt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_403bg"]
+size = Vector2(8, 4)
+
+[node name="door" type="Node2D" unique_id=358862055]
+script = ExtResource("1_v0irt")
+next_level = "res://SCENE/OVER.tscn"
+doortag = "door1"
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=1391376989]
+position = Vector2(0, 18)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2033239865]
+texture = ExtResource("2_v0irt")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1935349235]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=618911172]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_403bg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

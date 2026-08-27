@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c28ase7v02cer"]
+
+[ext_resource type="Texture2D" uid="uid://mcqjrv6duy2q" path="res://SPRITES/Untitled74_20260801205256.png" id="1_8ta0d"]
+[ext_resource type="Script" uid="uid://c1gxxsc0xj4v2" path="res://SCRIPT/titlescreen.gd" id="1_sphgv"]
+[ext_resource type="PackedScene" uid="uid://cbrt4oohyl6vw" path="res://TITLE SCREEN GUYS/TITLESCREENGUYS.tscn" id="6_qmbc5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ta0d"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="titlescreen" type="Control" unique_id=239931015]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sphgv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1295617002]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 156.0
+offset_right = -896.0
+offset_bottom = -399.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("1_8ta0d")
+
+[node name="Start" type="Button" parent="." unique_id=689440448]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.67
+anchor_top = 0.28100002
+anchor_right = 0.984
+anchor_bottom = 0.36100003
+offset_left = 0.15997314
+offset_top = -0.088012695
+offset_right = -0.56799316
+offset_bottom = 0.07197571
+theme_override_colors/font_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ta0d")
+text = "PLAY"
+
+[node name="Titlescreenguys" parent="." unique_id=1362011303 instance=ExtResource("6_qmbc5")]
+position = Vector2(214, 526)
+scale = Vector2(13, 13)
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

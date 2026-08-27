@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://tp54o7nnyo1y"]
+
+[ext_resource type="Script" uid="uid://du688rqcqca77" path="res://SCRIPT/keys.gd" id="1_wuwf6"]
+[ext_resource type="Resource" uid="uid://fxkyojvmwicj" path="res://inventory/items/keys/keyF1-1.tres" id="2_wuwf6"]
+[ext_resource type="Resource" uid="uid://f4yx1atjn3yi" path="res://inventory/playerkeys.tres" id="3_efib6"]
+[ext_resource type="Texture2D" uid="uid://b4kwmrcf6wpqq" path="res://SPRITES/key1.png" id="4_wuwf6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2owo"]
+radius = 5.0
+
+[node name="KEY" type="Node2D" unique_id=1348534410]
+script = ExtResource("1_wuwf6")
+item = ExtResource("2_wuwf6")
+inventory = ExtResource("3_efib6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=980455353]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1722954590]
+shape = SubResource("CircleShape2D_i2owo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=127778840]
+texture = ExtResource("4_wuwf6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

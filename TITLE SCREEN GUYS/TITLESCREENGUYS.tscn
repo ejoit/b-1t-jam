@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cbrt4oohyl6vw"]
+
+[ext_resource type="Script" uid="uid://bi0gbfwytrbcj" path="res://TITLE SCREEN GUYS/titlescreenguys.gd" id="1_rb2kc"]
+[ext_resource type="SpriteFrames" uid="uid://df0wejvx7uspa" path="res://animations/co_worker.tres" id="2_te550"]
+[ext_resource type="SpriteFrames" uid="uid://bm3rjimt1aj6b" path="res://animations/player.tres" id="3_itjh5"]
+[ext_resource type="SpriteFrames" uid="uid://ceuftou35462g" path="res://animations/npc.tres" id="4_te550"]
+
+[node name="Titlescreenguys" type="Node2D" unique_id=1362011303]
+script = ExtResource("1_rb2kc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=43776726]
+sprite_frames = ExtResource("2_te550")
+animation = &"idle"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1712480721]
+position = Vector2(15, 0)
+sprite_frames = ExtResource("3_itjh5")
+animation = &"idle"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=1444296480]
+position = Vector2(30, 0)
+sprite_frames = ExtResource("4_te550")
+animation = &"idle"

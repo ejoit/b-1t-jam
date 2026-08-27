@@ -1,0 +1,24 @@
+if {bobchat} == false:
+	Bob: hey mannnnn how are you
+	Bob: A little cloud today isnt it
+	YOU: I guess so
+	Bob: Have you come here to seeee your best friend ever... hehe
+	YOU: you could say that i guess
+	Bob: So what have you come to see me for
+	YOU: Do you have the key to closet upstairs
+	Bob: Oh yes iv got the key right here
+	YOU: Can i have it
+	Bob: Why do you need it? You dont work on that floor you work down here
+	YOU: Im late and need to talk to the boss
+	Bob: Oh late... i was late for a date once the year was early 1946 the war had ended aa few months ago.
+	Bob: And while i was on my way home i stoped in this french town for a few days while we waited for the boat
+	Bob: adn i met this amazin-
+	Bob just shut up i just want the key
+	Bob: RUDE TAKE YOUR DAMN KEY
+	
+	set {item} = "res://inventory/items/keys/keyF2-1.tres"
+	
+	[signal arg="Give_Item"]
+	set {bobchat} = true
+elif :
+	GO AWAY

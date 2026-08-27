@@ -1,0 +1,27 @@
+join GRED center [z_index="-3" mirrored="true" extra_data="BOB "]
+GRED: Hello there Welcome to the Work Comapany
+GRED: Well are you going to get to work theN?
+YOU: No, i want to ask the boss to have the day off.
+You slept in again didnt you?
+Yeah
+Well the bosses office is on the top foor (as you should know)
+Do you want some tips to play?
+- YES
+	GRED: On the bottom of your sleep bar is on the bottom of the screen.\
+	Dont let it hit 0 or you wont be able to wake up until a 3rd of it is recovered.
+	GRED: You can press space to sleep at any time and press it again to wake up if you have enough enrgy to do so.
+	GRED: If you get caught sleeping and you get a warning. if you get 3 warining you FIRED.
+	GRED: Warnings Can be wiped with a warning override
+	GRED: Co-worker who look like me are safe to sleep by and i highly recomend talking to them for tips and even items!
+	GRED: Talking about items press i to open the inventory and use the item you wanna use
+- NO
+	Oh ok
+if {spoken} == false:
+	set {item} = "res://inventory/items/keys/keyF1-1.tres"
+	set {spoken} = true
+	[signal arg="Give_Item"]
+	TAKE THIS KEY (F1-1)
+elif {spoken} == true:
+	Seem Like you already have the key
+[end_timeline]
+<Empty Text Event>

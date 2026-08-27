@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://bjcfvaykh27wm"]
+
+[ext_resource type="Script" uid="uid://c1lutuboralqt" path="res://SCRIPT/levelcode.gd" id="1_obbyl"]
+[ext_resource type="PackedScene" uid="uid://b501sa4vw50xt" path="res://SCENE/game_ui.tscn" id="2_b1pu8"]
+[ext_resource type="TileSet" uid="uid://cccej0kcor47l" path="res://TILESET/walls.tres" id="3_3ewnq"]
+[ext_resource type="FontFile" uid="uid://diaewnp618w6" path="res://fonts/5x5_pixel.ttf" id="4_q5yxt"]
+[ext_resource type="PackedScene" uid="uid://mur8yeupqlnx" path="res://SCENE/door2.tscn" id="5_akhhd"]
+[ext_resource type="PackedScene" uid="uid://doxdvhvxt230l" path="res://SCENE/player.tscn" id="6_2bwb4"]
+[ext_resource type="Resource" uid="uid://trdht0lpli5q" path="res://inventory/items/keys/Stair2.tres" id="9_xu615"]
+[ext_resource type="PackedScene" uid="uid://bipaf0qekkhgk" path="res://npcs/friendly_npc.tscn" id="12_gro33"]
+[ext_resource type="Resource" uid="uid://f4yx1atjn3yi" path="res://inventory/playerkeys.tres" id="13_4i18j"]
+
+[node name="main" type="Node2D" unique_id=1039175071]
+script = ExtResource("1_obbyl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=910440997]
+
+[node name="Game_UI" parent="CanvasLayer" unique_id=855096280 instance=ExtResource("2_b1pu8")]
+anchors_preset = -1
+anchor_left = -0.012
+anchor_top = -0.046000004
+offset_left = 6.8240004
+offset_top = 39.808002
+offset_right = -7.0
+offset_bottom = 10.0
+
+[node name="TileMap" type="TileMap" parent="." unique_id=288299975]
+position = Vector2(1, 1)
+tile_set = ExtResource("3_3ewnq")
+format = 2
+layer_0/tile_data = PackedInt32Array(720890, 131072, 1, 720889, 0, 5, 720891, 131072, 5, 655353, 65536, 2, 655355, 65536, 2, 589819, 65536, 2, 589817, 65536, 2, 524281, 0, 4, 524283, 131072, 4, 524282, 131072, 1)
+
+[node name="Label2" type="Label" parent="." unique_id=126069337]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.0
+offset_top = 103.0
+offset_right = -52.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+theme_override_fonts/font = ExtResource("4_q5yxt")
+theme_override_font_sizes/font_size = 8
+text = "FLOOR 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138298640]
+visible = false
+offset_left = 86.0
+offset_top = 44.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=307400412]
+
+[node name="doors" type="Node2D" parent="." unique_id=1685530940]
+
+[node name="door2" parent="doors" unique_id=1665921243 instance=ExtResource("5_akhhd")]
+position = Vector2(-88, 169)
+rotation = 3.1415927
+next_level = "res://Floors/floor2/room2.tscn"
+doortag = "CDOOR"
+keyneed = "keyStair-1"
+
+[node name="Spawn" parent="doors/door2" index="2" unique_id=1096225453]
+position = Vector2(3.5762787e-07, 19)
+
+[node name="PLAYER" parent="." unique_id=1477563370 instance=ExtResource("6_2bwb4")]
+position = Vector2(-88, 153)
+
+[node name="Label" type="Label" parent="." unique_id=1839806283]
+visible = false
+offset_left = -52.0
+offset_top = 106.0
+offset_right = 81.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.41568628, 0.41960785, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("4_q5yxt")
+theme_override_font_sizes/font_size = 8
+text = "PRESS    C    TO CHAT"
+vertical_alignment = 1
+
+[node name="FriendlyNPC" parent="." unique_id=1096966778 instance=ExtResource("12_gro33")]
+position = Vector2(-88, 130)
+keyinventory = ExtResource("13_4i18j")
+item = ExtResource("9_xu615")
+chat = "res://chats/CLOSETGUY.dtl"
+
+[connection signal="inchat" from="PLAYER" to="." method="_on_player_inchat"]
+
+[editable path="doors/door2"]

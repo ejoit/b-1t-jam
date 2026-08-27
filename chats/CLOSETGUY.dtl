@@ -1,0 +1,27 @@
+if {spoken2guy2} == false:
+	GUYINTHECLOSET: ahahah what you doing here?
+	YOU: Looking for a key
+	GUYINTHECLOSET: Well um... Im just in the closet
+	YOU: Why are you in the closet
+	Sorry the dialogue in this game is so bad
+	GUYINTHECLOSET: Because i can
+	YOU: Why dont you come out
+	GUYINTHECLOSET: Becuase im scared my boss is gonna fire me iv been in here since 1963
+	YOU: Isnt that the year this building was built
+	GUYINTHECLOSET: Yes
+	YOU: Im pretty sure she will be dead by now im surprised your still alive
+	GUYINTHECLOSET: You dont know Jennys secret do you?
+	YOU: JENNY THATS MY BOSS?????
+	GUYINTHECLOSET: SHE IS STILL ALIVE
+	YOU: Yeah???
+	GUYINTHECLOSET: Yeah im pretty sure she a distant cousin of mine
+	YOU: Why dose that matter
+	shhhhhh.....
+	YOU: oh ok
+	Here take the key
+	set {item} = "res://inventory/items/keys/Stair2.tres"
+	set {spoken2guy2} = true
+	[signal arg="Give_Item"]
+	TAKE THIS KEY
+elif {spoken2guy2} == true:
+	....

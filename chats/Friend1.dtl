@@ -1,0 +1,8 @@
+join GRED center
+Tom: Hey mate. Your In late arnt you?
+Tom: OH YOU SLEPT IN AGAIN DIDNT YOU
+Tom: Take this key
+Tom: Due to lazy writing and already many delays just take the key
+set {item} = "res://inventory/items/keys/keyF1-3.tres"
+[signal arg="Give_Item"]
+[signal arg="Give_Item2"]

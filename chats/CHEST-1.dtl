@@ -1,0 +1,6 @@
+[signal arg="Give_Item"]
+if {Chestopened} == true:
+	This chest has already been opened
+elif {Chestopened} == false:
+	[signal arg="Give_Item"]
+	YOU GOT THE {Global.item2give}

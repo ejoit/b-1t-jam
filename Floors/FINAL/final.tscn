@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://bhxgybcundw41"]
+
+[ext_resource type="Script" uid="uid://c1lutuboralqt" path="res://SCRIPT/levelcode.gd" id="1_ygc2a"]
+[ext_resource type="PackedScene" uid="uid://b501sa4vw50xt" path="res://SCENE/game_ui.tscn" id="2_4hld2"]
+[ext_resource type="TileSet" uid="uid://cccej0kcor47l" path="res://TILESET/walls.tres" id="3_3fpbo"]
+[ext_resource type="PackedScene" uid="uid://mur8yeupqlnx" path="res://SCENE/door2.tscn" id="5_iv145"]
+[ext_resource type="PackedScene" uid="uid://bsefcu0c0ll61" path="res://MapItems/lamp.tscn" id="7_pm8bj"]
+[ext_resource type="PackedScene" uid="uid://doxdvhvxt230l" path="res://SCENE/player.tscn" id="8_3ats3"]
+[ext_resource type="PackedScene" uid="uid://cy4m5xxnr4jh8" path="res://npcs/JENNY.tscn" id="8_o30be"]
+[ext_resource type="FontFile" uid="uid://diaewnp618w6" path="res://fonts/5x5_pixel.ttf" id="9_ike7l"]
+
+[node name="main" type="Node2D" unique_id=1039175071]
+script = ExtResource("1_ygc2a")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=910440997]
+
+[node name="Game_UI" parent="CanvasLayer" unique_id=855096280 instance=ExtResource("2_4hld2")]
+anchors_preset = -1
+anchor_left = -0.012
+anchor_top = -0.046000004
+offset_left = 6.8240004
+offset_top = 40.808002
+offset_right = -7.0
+offset_bottom = 11.0
+
+[node name="TileMap" type="TileMap" parent="." unique_id=288299975]
+position = Vector2(1, 1)
+tile_set = ExtResource("3_3fpbo")
+format = 2
+layer_0/tile_data = PackedInt32Array(720889, 65536, 4, 720890, 131072, 1, 720891, 65536, 4, 720892, 131072, 1, 720888, 131072, 1, 655353, 0, 0, 655355, 0, 0, 720893, 131072, 5, 720887, 0, 5, 262135, 65536, 2, 327671, 65536, 2, 393207, 65536, 2, 458743, 65536, 2, 524279, 65536, 2, 589815, 65536, 2, 655351, 65536, 2, 131069, 65536, 2, 196605, 65536, 2, 262141, 65536, 2, 327677, 65536, 2, 393213, 65536, 2, 458749, 65536, 2, 524285, 65536, 2, 589821, 65536, 2, 655357, 65536, 2, 196599, 65536, 2, 131063, 65536, 2, 65527, 0, 4, 65533, 131072, 4, 65528, 131072, 1, 65529, 65536, 0, 65530, 131072, 1, 65531, 65536, 0, 65532, 131072, 1, 131065, 0, 2, 131067, 0, 2)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138298640]
+visible = false
+offset_left = 86.0
+offset_top = 44.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=307400412]
+
+[node name="doors" type="Node2D" parent="." unique_id=1685530940]
+
+[node name="door2" parent="doors" unique_id=1665921243 instance=ExtResource("5_iv145")]
+position = Vector2(-87, 169)
+rotation = 3.1415927
+next_level = "res://Floors/floor3/room1.tscn"
+doortag = "1"
+keyneed = "keyStair-1"
+
+[node name="Spawn" parent="doors/door2" index="2" unique_id=1096225453]
+position = Vector2(3.5762787e-07, 19)
+
+[node name="PLAYER" parent="." unique_id=1477563370 instance=ExtResource("8_3ats3")]
+position = Vector2(-88, 142)
+
+[node name="Label" type="Label" parent="." unique_id=1839806283]
+visible = false
+offset_left = -52.0
+offset_top = 106.0
+offset_right = 81.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.41568628, 0.41960785, 0.41960785, 1)
+theme_override_fonts/font = ExtResource("9_ike7l")
+theme_override_font_sizes/font_size = 8
+text = "PRESS    C    TO CHAT"
+vertical_alignment = 1
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=1392704856]
+
+[node name="lamp" parent="Node2D2" unique_id=1873959588 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 154)
+
+[node name="lamp2" parent="Node2D2" unique_id=1512879106 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 156)
+
+[node name="lamp3" parent="Node2D2" unique_id=355907050 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 136)
+
+[node name="lamp4" parent="Node2D2" unique_id=615235686 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 137)
+
+[node name="lamp5" parent="Node2D2" unique_id=2095466341 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 118)
+
+[node name="lamp6" parent="Node2D2" unique_id=692136263 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 118)
+
+[node name="lamp7" parent="Node2D2" unique_id=257052606 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 100)
+
+[node name="lamp8" parent="Node2D2" unique_id=972283974 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 100)
+
+[node name="lamp9" parent="Node2D2" unique_id=115702780 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 154)
+
+[node name="lamp10" parent="Node2D2" unique_id=623654498 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 136)
+
+[node name="lamp11" parent="Node2D2" unique_id=529309825 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 118)
+
+[node name="lamp12" parent="Node2D2" unique_id=210787712 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 100)
+
+[node name="lamp13" parent="Node2D2" unique_id=1169566660 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 156)
+
+[node name="lamp14" parent="Node2D2" unique_id=1129875249 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 137)
+
+[node name="lamp15" parent="Node2D2" unique_id=519560334 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 118)
+
+[node name="lamp16" parent="Node2D2" unique_id=649999636 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 100)
+
+[node name="lamp17" parent="Node2D2" unique_id=386159109 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 81)
+
+[node name="lamp18" parent="Node2D2" unique_id=484245909 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 82)
+
+[node name="lamp19" parent="Node2D2" unique_id=823192087 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 63)
+
+[node name="lamp20" parent="Node2D2" unique_id=1104903287 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 63)
+
+[node name="lamp21" parent="Node2D2" unique_id=1208391077 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 44)
+
+[node name="lamp22" parent="Node2D2" unique_id=2098889319 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 45)
+
+[node name="lamp23" parent="Node2D2" unique_id=429305996 instance=ExtResource("7_pm8bj")]
+position = Vector2(-63, 26)
+
+[node name="lamp24" parent="Node2D2" unique_id=167735791 instance=ExtResource("7_pm8bj")]
+position = Vector2(-111, 26)
+
+[node name="lamp25" parent="Node2D2" unique_id=2003745151 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 81)
+
+[node name="lamp26" parent="Node2D2" unique_id=1073233050 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 63)
+
+[node name="lamp27" parent="Node2D2" unique_id=1846453418 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 44)
+
+[node name="lamp28" parent="Node2D2" unique_id=1006518040 instance=ExtResource("7_pm8bj")]
+position = Vector2(-51, 26)
+
+[node name="lamp29" parent="Node2D2" unique_id=28751031 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 82)
+
+[node name="lamp30" parent="Node2D2" unique_id=1375406609 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 63)
+
+[node name="lamp31" parent="Node2D2" unique_id=787682278 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 45)
+
+[node name="lamp32" parent="Node2D2" unique_id=1413920725 instance=ExtResource("7_pm8bj")]
+position = Vector2(-124, 26)
+
+[node name="jenny" parent="." unique_id=1096966778 instance=ExtResource("8_o30be")]
+position = Vector2(-87, 19)
+chat = "res://chats/JENNY.dtl"
+
+[connection signal="inchat" from="PLAYER" to="." method="_on_player_inchat"]
+
+[editable path="doors/door2"]

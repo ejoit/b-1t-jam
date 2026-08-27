@@ -1,0 +1,2 @@
+extends WorkerMove
+class_name WorkerWalk

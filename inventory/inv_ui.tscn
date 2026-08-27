@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bte68ey1y0p33"]
+
+[ext_resource type="Script" uid="uid://cdh57yn36iu40" path="res://inventory/inv_ui.gd" id="1_f2u1w"]
+[ext_resource type="PackedScene" uid="uid://ctww7a5385t45" path="res://inventory/InvSlot.tscn" id="2_w82yi"]
+[ext_resource type="FontFile" uid="uid://diaewnp618w6" path="res://fonts/5x5_pixel.ttf" id="3_dn3an"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ars6i"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d50yw"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0anuv"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w82yi"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn3an"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjf2a"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7can1"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5r18x"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1ede"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkt2u"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cp3x1"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ulw2a"]
+bg_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+border_color = Color(0.41960785, 0.41568628, 0.41568628, 1)
+
+[node name="InvUi" type="Control" unique_id=67689697]
+layout_mode = 3
+anchors_preset = 0
+pivot_offset = Vector2(233, 0)
+mouse_filter = 2
+script = ExtResource("1_f2u1w")
+inventory_slot_scene = ExtResource("2_w82yi")
+
+[node name="TabContainer" type="TabContainer" parent="." unique_id=87581492]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 236.0
+offset_bottom = 610.0
+pivot_offset = Vector2(118.5, 0)
+mouse_filter = 2
+theme_override_colors/font_selected_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+theme_override_colors/font_hovered_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+theme_override_colors/font_unselected_color = Color(0.90588236, 0.83137256, 0.7411765, 1)
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/tab_separation = 18
+theme_override_constants/icon_separation = 15
+theme_override_fonts/font = ExtResource("3_dn3an")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ars6i")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_d50yw")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_0anuv")
+tab_alignment = 1
+current_tab = 1
+
+[node name="ITEMS" type="TabBar" parent="TabContainer" unique_id=450645828]
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_w82yi")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_dn3an")
+tab_alignment = 1
+close_with_middle_mouse = false
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/ITEMS" unique_id=1450763868]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 231.0
+offset_bottom = 586.0
+mouse_filter = 2
+theme_override_constants/separation = 35
+
+[node name="KEYITEMS" type="TabBar" parent="TabContainer" unique_id=1403927377]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_selected_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hovered_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_unselected_color = Color(0.7, 0.7, 0.7, 1)
+theme_override_colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_rjf2a")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_7can1")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_5r18x")
+theme_override_styles/tab_disabled = SubResource("StyleBoxFlat_j1ede")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_kkt2u")
+theme_override_styles/button_pressed = SubResource("StyleBoxFlat_cp3x1")
+theme_override_styles/button_highlight = SubResource("StyleBoxFlat_ulw2a")
+tab_alignment = 1
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/KEYITEMS" unique_id=2082750738]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 231.0
+offset_bottom = 586.0
+mouse_filter = 2
+theme_override_constants/separation = 35

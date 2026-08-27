@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://doxdvhvxt230l"]
+
+[ext_resource type="Script" uid="uid://dg6sptsstr73e" path="res://SCRIPT/PLAYER.gd" id="1_pvtcc"]
+[ext_resource type="Resource" uid="uid://cdfenwjcf7om6" path="res://inventory/playerinv.tres" id="2_74isj"]
+[ext_resource type="Resource" uid="uid://f4yx1atjn3yi" path="res://inventory/playerkeys.tres" id="3_qnhi1"]
+[ext_resource type="SpriteFrames" uid="uid://bm3rjimt1aj6b" path="res://animations/player.tres" id="4_74isj"]
+[ext_resource type="PackedScene" uid="uid://bte68ey1y0p33" path="res://inventory/inv_ui.tscn" id="6_qnhi1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2owo"]
+size = Vector2(10, 13)
+
+[node name="PLAYER" type="CharacterBody2D" unique_id=23979979]
+script = ExtResource("1_pvtcc")
+inv = ExtResource("2_74isj")
+keyinv = ExtResource("3_qnhi1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=675569835]
+zoom = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=330290876]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_i2owo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1768352286]
+texture_filter = 1
+sprite_frames = ExtResource("4_74isj")
+animation = &"idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=573263961]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=889264864]
+
+[node name="InvUi" parent="CanvasLayer" unique_id=67689697 instance=ExtResource("6_qnhi1")]
+visible = false

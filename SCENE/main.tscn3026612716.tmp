@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dcp3ukqegmbjv"]
+
+[ext_resource type="PackedScene" uid="uid://doxdvhvxt230l" path="res://SCENE/player.tscn" id="1_0t5xj"]
+[ext_resource type="PackedScene" uid="uid://bjht5rivs3yom" path="res://SCENE/coffee.tscn" id="2_q4ew6"]
+
+[node name="main" type="Node2D" unique_id=1039175071]
+
+[node name="PLAYER" parent="." unique_id=1477563370 instance=ExtResource("1_0t5xj")]
+position = Vector2(88, 111)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138298640]
+offset_left = 86.0
+offset_top = 44.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="COFFEE" parent="." unique_id=1348534410 instance=ExtResource("2_q4ew6")]
+position = Vector2(227, 115)

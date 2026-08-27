@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bajajxiyw6jnd"]
+
+[ext_resource type="Script" uid="uid://dcoj4dmea0jbd" path="res://SCRIPT/computer.gd" id="1_ehcd4"]
+[ext_resource type="Texture2D" uid="uid://cfbrqiywnuij4" path="res://SPRITES/computer.png" id="1_gnb1m"]
+[ext_resource type="Resource" uid="uid://f4yx1atjn3yi" path="res://inventory/playerkeys.tres" id="2_q1vq3"]
+[ext_resource type="Resource" uid="uid://fxkyojvmwicj" path="res://inventory/items/keys/keyF1-1.tres" id="3_euf3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ylk5t"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i2owo"]
+size = Vector2(10, 20)
+
+[node name="computer" type="StaticBody2D" unique_id=1125276428]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ehcd4")
+keyinventory = ExtResource("2_q1vq3")
+item = ExtResource("3_euf3c")
+chat = "res://chats/Computers/timeline.dtl"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=579836103]
+texture = ExtResource("1_gnb1m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583122745]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ylk5t")
+
+[node name="ChatZone" type="Area2D" parent="." unique_id=1507481790]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChatZone" unique_id=1012359387]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_i2owo")
+
+[connection signal="body_entered" from="ChatZone" to="." method="_on_chat_zone_body_entered"]
+[connection signal="body_exited" from="ChatZone" to="." method="_on_chat_zone_body_exited"]

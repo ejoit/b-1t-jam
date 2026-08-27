@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://beoouxxh6co1y"]
+
+[ext_resource type="Script" uid="uid://c1lutuboralqt" path="res://SCRIPT/levelcode.gd" id="1_1leoe"]
+[ext_resource type="PackedScene" uid="uid://b501sa4vw50xt" path="res://SCENE/game_ui.tscn" id="2_2camf"]
+[ext_resource type="TileSet" uid="uid://cccej0kcor47l" path="res://TILESET/walls.tres" id="3_hybcu"]
+[ext_resource type="PackedScene" uid="uid://kyvvd1eddjxv" path="res://SCENE/door.tscn" id="7_cqear"]
+[ext_resource type="Resource" uid="uid://f4yx1atjn3yi" path="res://inventory/playerkeys.tres" id="7_mkm50"]
+[ext_resource type="PackedScene" uid="uid://bjht5rivs3yom" path="res://collectables/ITEMS/coffee.tscn" id="10_ajag7"]
+[ext_resource type="PackedScene" uid="uid://bipaf0qekkhgk" path="res://npcs/friendly_npc.tscn" id="10_jg3go"]
+[ext_resource type="PackedScene" uid="uid://doxdvhvxt230l" path="res://SCENE/player.tscn" id="11_6abxg"]
+[ext_resource type="Resource" uid="uid://fxkyojvmwicj" path="res://inventory/items/keys/keyF1-1.tres" id="12_asigj"]
+
+[node name="main" type="Node2D" unique_id=1039175071]
+script = ExtResource("1_1leoe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=910440997]
+
+[node name="Game_UI" parent="CanvasLayer" unique_id=855096280 instance=ExtResource("2_2camf")]
+anchors_preset = -1
+anchor_left = -0.012
+anchor_top = -0.046000004
+offset_left = 6.8240004
+offset_top = 39.808002
+offset_right = -7.0
+offset_bottom = 10.0
+
+[node name="TileMap" type="TileMap" parent="." unique_id=288299975]
+position = Vector2(1, 1)
+tile_set = ExtResource("3_hybcu")
+format = 2
+layer_0/tile_data = PackedInt32Array(262136, 0, 4, 327672, 65536, 2, 393208, 65536, 2, 458744, 65536, 2, 524280, 65536, 2, 589816, 65536, 2, 655352, 65536, 2, 720888, 0, 5, 720889, 131072, 1, 720890, 131072, 1, 720891, 131072, 1, 720892, 131072, 5, 262140, 131072, 4, 327676, 65536, 2, 393212, 65536, 2, 458748, 65536, 2, 524284, 65536, 2, 589820, 65536, 2, 655356, 65536, 2, 262137, 131072, 1, 262138, 131072, 1, 262139, 131072, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1138298640]
+visible = false
+offset_left = 86.0
+offset_top = 44.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="Node2D" type="Node2D" parent="." unique_id=307400412]
+
+[node name="doors" type="Node2D" parent="." unique_id=1685530940]
+
+[node name="door" parent="doors" unique_id=358862055 instance=ExtResource("7_cqear")]
+position = Vector2(-88, 60)
+next_level = "res://Floors/floor1/room1.tscn"
+doortag = "1"
+keyneed = "keyf1-1"
+
+[node name="Spawn" parent="doors/door" index="0" unique_id=1391376989]
+position = Vector2(0, 19)
+
+[node name="FriendlyNPC" parent="." unique_id=1096966778 instance=ExtResource("10_jg3go")]
+position = Vector2(-89, 116)
+keyinventory = ExtResource("7_mkm50")
+item = ExtResource("12_asigj")
+chat = "res://chats/Computers/timeline.dtl"
+
+[node name="PLAYER" parent="." unique_id=1477563370 instance=ExtResource("11_6abxg")]
+position = Vector2(-89, 160)
+
+[node name="COFFEE" parent="." unique_id=1348534410 instance=ExtResource("10_ajag7")]
+position = Vector2(-75, 88)
+
+[node name="COFFEE2" parent="." unique_id=24452392 instance=ExtResource("10_ajag7")]
+position = Vector2(-103, 88)
+
+[connection signal="inchat" from="PLAYER" to="." method="_on_player_inchat"]
+
+[editable path="doors/door"]

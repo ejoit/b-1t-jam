@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InvItem" format=3 uid="uid://fxkyojvmwicj"]
+
+[ext_resource type="Script" uid="uid://cqnkbcab0bhfp" path="res://inventory/inventory_item.gd" id="1_0l03b"]
+[ext_resource type="Texture2D" uid="uid://b4kwmrcf6wpqq" path="res://SPRITES/key1.png" id="2_65tf5"]
+
+[resource]
+resource_name = "KEYF1-1"
+script = ExtResource("1_0l03b")
+name = "KEYF1-1"
+texture = ExtResource("2_65tf5")
+item_id = "keyf1-1"
+is_key = true
+metadata/_custom_type_script = "uid://cqnkbcab0bhfp"

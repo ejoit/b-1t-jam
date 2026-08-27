@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://j6mqcr6x3rir"]
+
+[ext_resource type="Script" uid="uid://b81btver7x8d3" path="res://SCRIPT/vision.gd" id="1_utmin"]
+[ext_resource type="Script" uid="uid://cbsabidmx8hh5" path="res://SCRIPT/collision_polygon_2d.gd" id="1_wwhkw"]
+
+[node name="vision" type="Area2D" unique_id=1361501342]
+script = ExtResource("1_utmin")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=467465715]
+position = Vector2(-16, 0)
+polygon = PackedVector2Array(0, 0, 152, 64, 168, 32, 176, 0, 168, -32, 152, -64)
+script = ExtResource("1_wwhkw")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1378614669]
+position = Vector2(-16, 0)
+target_position = Vector2(176, 0)
+
+[node name="RayCast2Dmiddle" type="RayCast2D" parent="." unique_id=1693831074]
+position = Vector2(-16, 0)
+target_position = Vector2(176, 0)
+
+[node name="RayCast2Dleft" type="RayCast2D" parent="." unique_id=535544071]
+position = Vector2(-16, 0)
+target_position = Vector2(152, -64)
+
+[node name="RayCast2Dright" type="RayCast2D" parent="." unique_id=2068235453]
+position = Vector2(-16, 0)
+target_position = Vector2(152, 64)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

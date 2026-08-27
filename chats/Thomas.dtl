@@ -1,0 +1,19 @@
+if {ThomasSp} == "TRUE":
+	Good luck with Bob your gonna need it
+	If you forgot where the closest is it at the bottm right of this room
+	and if your forgot where bob is it the room on the far right on the bottom floor
+elif {ThomasSp} == "false":
+	Thomas: Hey They what do you want
+	YOU: Do you have the key so i can go to the next floor
+	Thomas: It in the closet,
+	YOU: Can i have it
+	Thomas: The issue it i dont have the key
+	YOU: Who dose
+	Thomas: Bob from accounting. I cant stand the guy he never shuts up.
+	Thomas: Ill give you a key to his room but be warned
+	Thomas: This is the route to bobs room
+	Thomas: Go to the bottom foor where the 4 doors meet at the bottom the stair\
+	Go to the Left room and the the room above that. You will find a door you couldnt open Before
+	set {ThomasSp} = "true"
+	set {item} = "res://inventory/items/keys/keyF1-4.tres"
+	[signal arg="Give_Item"]

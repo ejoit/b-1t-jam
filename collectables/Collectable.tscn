@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bbqhexbe1g8dq"]
+
+[ext_resource type="Script" uid="uid://doq8n2mqux5sf" path="res://collectables/collectable.gd" id="1_kuqvn"]
+[ext_resource type="Texture2D" uid="uid://im7ppcp5vjy" path="res://SPRITES/1786201180691.png" id="2_kuqvn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i2owo"]
+radius = 5.0
+
+[node name="Collectable" type="Node2D" unique_id=1130381287]
+script = ExtResource("1_kuqvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1849300489]
+texture = ExtResource("2_kuqvn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2088686483]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=943099030]
+shape = SubResource("CircleShape2D_i2owo")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
